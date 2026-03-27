@@ -1,90 +1,31 @@
-# 🌿 Plant Identifier API
+# 🌿 Eco Viewer — Back-end
 
-API back-end responsável por processar imagens enviadas pelo cliente, identificar plantas com apoio de serviços externos e enriquecer os dados com automação e IA para alimentar a interface de um aplicativo identificador de plantas.
-
----
-
-## 📌 Visão geral
-
-O objetivo desta API é receber uma imagem de planta enviada pelo cliente, processá-la, consultar uma API externa de identificação botânica, enriquecer as informações com apoio de automação via **n8n** e retornar ao front-end uma resposta organizada, consistente e útil para exibição ao usuário final.
-
-Inicialmente, como a interface do aplicativo ainda não está pronta, os testes da API podem ser realizados via **HTTPie** utilizando requisições `multipart/form-data`.
+Back-end da aplicação **EcoViewer**, uma biblioteca digital de plantas que fornece informações botânicas detalhadas ao front-end, consumindo e tratando dados da API externa [Perenual](https://perenual.com/).
 
 ---
 
-## 🎯 Objetivo do sistema
+## 📋 Sobre o Projeto
 
-O sistema foi projetado para funcionar como a camada principal de processamento do aplicativo de identificação de plantas.
+O servidor é responsável por intermediar a comunicação entre o front-end e a API Perenual. Ele recebe as requisições, consulta a API externa, processa o retorno e devolve um JSON limpo e estruturado com as informações relevantes de cada planta — nome comum, nome científico, família botânica, imagens e categoria e muitas outras coisas.
 
-### Responsabilidades:
+A filtragem por categorias (ex: plantas venenosas, rosas, etc.) é tratada no front end, que mapeia os parâmetros recebidos do back end para os filtros correspondentes da API Perenual, retornando apenas os itens da categoria solicitada.
 
-- Receber a imagem da planta enviada pelo cliente  
-- Encaminhar a imagem para uma API externa (Plant.id)  
-- Obter dados iniciais como nome e características  
-- Enviar os dados para um fluxo automatizado no n8n  
-- Utilizar IA para enriquecer as informações  
-- Tratar e padronizar a resposta  
-- Retornar dados consistentes para o front-end  
+O banco de dados **PostgreSQL** é utilizado para persistência local de dados, reduzindo chamadas desnecessárias à API externa.
 
 ---
 
-## 🚀 Tecnologias utilizadas
+## 🛠️ Tecnologias Utilizadas
 
-- **TypeScript**
-- **Node.js**
-- **Express**
-- **Multer**
-- **PostgreSQL**
-- **n8n**
-- **Plant.id API**
-- **APIs externas**
-- **IA (Agente via n8n)**
+| Tecnologia | Função |
+|---|---|
+| **Node.js** | Ambiente de execução do servidor |
+| **Express** | Framework para criação das rotas e middlewares |
+| **TypeScript** | Superset do JavaScript com tipagem estática, tornando o código mais seguro e legível |
+| **PostgreSQL** | Banco de dados relacional para persistência de dados |
+| **Perenual API** | API externa que fornece os dados das plantas (nome, família, imagens, etc.) |
 
 ---
 
-## 🧠 Arquitetura da solução
+## 🗂️ Estrutura de Pastas
 
-A arquitetura segue um fluxo de processamento em etapas:
-
-### Componentes principais
-
-#### 1. Cliente
-Responsável por enviar a imagem (atualmente via HTTPie).
-
-#### 2. Back-end API
-- Recebe imagem
-- Valida dados
-- Integra com Plant.id
-- Integra com n8n
-- Trata resposta
-- Retorna ao cliente
-
-#### 3. Plant.id
-API responsável pela identificação inicial da planta.
-
-#### 4. n8n
-Responsável por automação e enriquecimento com IA.
-
-#### 5. PostgreSQL
-Persistência de dados e histórico.
-
----
-
-## 🔄 Fluxo de funcionamento
-
-```text
-Cliente
-   ↓
-API (Express + Multer)
-   ↓
-Validação
-   ↓
-Plant.id API
-   ↓
-Resposta inicial
-   ↓
-n8n (IA)
-   ↓
-Back-end
-   ↓
-Resposta final
+O projeto segue o padrão arquitetural **MVC (Model - View - Controller)**, separando as responsabilidades em camadas bem definidas:
