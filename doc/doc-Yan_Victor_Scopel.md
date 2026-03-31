@@ -6,10 +6,10 @@
 **Data de Início:** [31/03/2026]  
 **Horário de Início:** [16:00hr]  
 
-**Data de Término:** [Dia/Mês/Ano]  
-**Horário de Término:** [HH:MM]  
+**Data de Término:** [31/03/2026]  
+**Horário de Término:** [16:40]  
 
-**Duração Total:* [Ex: 3 horas |* 2 dias | etc]
+**Duração Total:* [40 minutos]
 
 ---
 
