@@ -1,13 +1,13 @@
 ## 📌 Registro de Desenvolvimento
 
-**Responsável:** [Seu Nome]  
-**Data de Início:** [Dia/Mês/Ano]  
-**Horário de Início:** [HH:MM]  
+**Responsável:** [Jonathan Silva Gomes]  
+**Data de Início:** [02/04/2026]  
+**Horário de Início:** [17:30]  
 
-**Data de Término:** [Dia/Mês/Ano]  
-**Horário de Término:** [HH:MM]  
+**Data de Término:** [02/04/2026]  
+**Horário de Término:** [18:30]  
 
-**Duração Total:** [Ex: 3 horas | 2 dias | etc]
+**Duração Total:** [1 hora]
 
 ---
 
@@ -15,9 +15,9 @@
 
 Descreva apenas o que foi feito de forma objetiva:
 
-- 
-- 
-- 
+- Instalação da ferramenta docker para ultilização de Banco de Dados PostgreSQL
+- Criação do Contêiner
+- Definição da estrutura do banco de dados
 
 ---
 
@@ -26,8 +26,6 @@ Descreva apenas o que foi feito de forma objetiva:
 Liste problemas reais (isso é MUITO importante para avaliação):
 
 - 
-- 
-- 
 
 ---
 
@@ -35,8 +33,7 @@ Liste problemas reais (isso é MUITO importante para avaliação):
 
 Explique como isso contribui para o sistema (Back-end / Front-end):
 
-- 
-- 
+- Contribui com o Armazenamento dos dados das plantas
 - 
 
 ---
